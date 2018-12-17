@@ -1,6 +1,11 @@
 function add_doggo() {
-    var src = "https://dog.ceo/api/breed/shiba/images";
-    show_image("https://dog.ceo/api/breed/shiba/images", 500,500, "Doggo");
+    fetch("https://dog.ceo/api/breed/shiba/images")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(imageObj) {
+            show_image(imageObj.message[0], 500,500, "Doggo");
+        });
 }
 
 
