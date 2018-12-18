@@ -1,10 +1,8 @@
 function add_doggo() {
     fetch("https://dog.ceo/api/breed/shiba/images/random")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(imageObj) {
-            show_image(imageObj.message, 500,500, "Doggo");
+        .then(response => response.json())
+        .then(function(dogsObj) {
+            show_image(dogsObj.message, 500,500, "Doggo");
         });
 }
 
