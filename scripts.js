@@ -10,4 +10,3 @@ function show_image(dogObj) {
     current_image.src = dogObj.message
 }
 
-
