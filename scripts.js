@@ -4,9 +4,12 @@ function add_doggo() {
         .then(show_image);
 }
 
-
-function show_image(dogObj) {
+function show_image({message}) {
     const current_image = document.getElementById("static-doggo");
-    current_image.src = dogObj.message
+    current_image.src = message
+// function show_image(dogObj) {
+//     const current_image = document.getElementById("static-doggo");
+//     current_image.src = dogObj.message
 }
 
+add_doggo();
