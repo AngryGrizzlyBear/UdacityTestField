@@ -1,19 +1,13 @@
 function add_doggo() {
-    fetch("https://dog.ceo/api/breed/shiba/images")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(imageObj) {
-            show_image(imageObj.message[0], 500,500, "Doggo");
-        });
+    fetch("https://dog.ceo/api/breed/shiba/images/random")
+        .then(response => response.json())
+        .then(show_image);
 }
 
 
-function show_image(src, width, height, alt) {
-    var img = document.createElement("img");
-    img.src = src;
-    img.width = width;
-    img.height = height;
-    img.alt = alt;
-    document.body.appendChild(img);
+function show_image(dogObj) {
+    const current_image = document.getElementById("static-doggo");
+    current_image.src = dogObj.message
 }
+
+
